@@ -5,8 +5,10 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 
-import styles from './styles.css'
-import AdsilaComponent from './adsila/adsila'
+import styles from './styles.scss'
+
+export AdsilaComponent from './adsila/adsila'
+export MoheComponent from './mohe/mohe'
 
 class ExampleComponent extends Component {
   static propTypes = {
@@ -24,4 +26,4 @@ class ExampleComponent extends Component {
   }
 }
 
-export {AdsilaComponent, ExampleComponent}
+export { ExampleComponent}

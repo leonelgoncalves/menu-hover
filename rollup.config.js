@@ -6,6 +6,7 @@ import resolve from 'rollup-plugin-node-resolve'
 import url from 'rollup-plugin-url'
 
 import pkg from './package.json'
+import scss from 'rollup-plugin-scss'
 
 export default {
   input: 'src/index.js',
@@ -21,6 +22,7 @@ export default {
   ],
   plugins: [
     external(),
+    scss(), 
     postcss({
       modules: true
     }),

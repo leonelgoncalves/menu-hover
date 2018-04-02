@@ -2,11 +2,11 @@
  * @class AdsilaComponent
  */
 
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types'
-import styles from './adsila.css';
+import styles from './adsila.scss';
 
-export default class AdsilaComponent extends Component {
+export default class AdsilaComponent extends PureComponent {
     static propTypes = {
         title: PropTypes.string,
         description: PropTypes.string,
