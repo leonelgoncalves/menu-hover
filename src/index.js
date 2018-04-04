@@ -6,8 +6,9 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 import styles from "./styles.scss";
-export AdsilaComponent from "./adsila/adsila";
-export MoheComponent from "./mohe/mohe";
+
+import AdsilaComponent from "./adsila/adsila";
+import MoheComponent from "./mohe/mohe";
 
 class ExampleComponent extends Component {
   static propTypes = {
@@ -20,4 +21,4 @@ class ExampleComponent extends Component {
   }
 }
 
-export { ExampleComponent };
+export { AdsilaComponent, MoheComponent, ExampleComponent };

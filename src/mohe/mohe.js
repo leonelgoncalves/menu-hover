@@ -7,6 +7,7 @@ import PropTypes from "prop-types";
 import styles from "./mohe.scss";
 import anime from "animejs";
 import charming from "charming";
+import TextComponent from "../common/Text";
 
 export default class MoheComponent extends PureComponent {
   static propTypes = {
@@ -21,6 +22,7 @@ export default class MoheComponent extends PureComponent {
   constructor(props) {
     super(props);
     this.dom.name = React.createRef();
+    this.dom.description = React.createRef();
     this.dom.element = React.createRef();
   }
 
@@ -42,6 +44,7 @@ export default class MoheComponent extends PureComponent {
   mouseEnter() {
     this.mouseTimeout = setTimeout(() => {
       this.isActive = true;
+      this.dom.description.current.style.color = this.props.descriptionColor;
       anime.remove(this.dom.nameLetters);
       anime({
         targets: this.dom.nameLetters,
@@ -76,6 +79,7 @@ export default class MoheComponent extends PureComponent {
     clearTimeout(this.mouseTimeout);
     if (!this.isActive) return;
     this.isActive = false;
+    this.dom.description.current.style.color = "transparent";
     anime.remove(this.dom.nameLetters);
     anime({
       targets: this.dom.nameLetters,
@@ -90,8 +94,7 @@ export default class MoheComponent extends PureComponent {
   }
 
   render() {
-    const { title, description, titleColor, descriptionColor } = this.props;
-    console.log("aa");
+    const { title, description, titleColor } = this.props;
     return (
       <div className={styles.menuMohe}>
         <a
@@ -101,14 +104,18 @@ export default class MoheComponent extends PureComponent {
           ref={this.dom.element}
           href="#"
         >
-          <span
-            ref={this.dom.name}
-            className={styles.menu__itemName}
-            style={{ color: titleColor }}
-          >
-            {title}
-          </span>
-          <span className={styles.menu__itemLabel}>{description}</span>
+          <TextComponent
+            text={title}
+            textRef={this.dom.name}
+            textClass={styles.menu__itemName}
+            textColor={titleColor}
+          />
+
+          <TextComponent
+            text={description}
+            textRef={this.dom.description}
+            textClass={styles.menu__itemLabel}
+          />
         </a>
       </div>
     );

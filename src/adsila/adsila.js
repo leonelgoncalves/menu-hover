@@ -5,6 +5,7 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import styles from "./adsila.scss";
+import TextComponent from "../common/Text";
 
 export default class AdsilaComponent extends PureComponent {
   static propTypes = {
@@ -19,15 +20,16 @@ export default class AdsilaComponent extends PureComponent {
     return (
       <div className={styles.menuAdsila}>
         <a className={styles.menu__item} href="#">
-          <span className={styles.menu__itemName} style={{ color: titleColor }}>
-            {title}
-          </span>
-          <span
-            className={styles.menu__itemLabel}
-            style={{ color: descriptionColor }}
-          >
-            {description}
-          </span>
+          <TextComponent
+            text={title}
+            textClass={styles.menu__itemName}
+            textColor={titleColor}
+          />
+          <TextComponent
+            text={description}
+            textClass={styles.menu__itemLabel}
+            textColor={descriptionColor}
+          />
         </a>
       </div>
     );
