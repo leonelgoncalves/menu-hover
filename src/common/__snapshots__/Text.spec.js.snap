@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text Snapshot: should add color to text 1`] = `
+<span
+  className=""
+  style={
+    Object {
+      "color": "red",
+    }
+  }
+>
+  Hola!
+</span>
+`;
+
+exports[`Text Snapshot: should renders correctly 1`] = `
+<span
+  className=""
+  style={
+    Object {
+      "color": "",
+    }
+  }
+>
+  Hola!
+</span>
+`;

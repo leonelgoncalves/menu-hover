@@ -1,11 +1,12 @@
 import React from "react";
-// import { mount } from "enzyme";
+import { mount, shallow } from "enzyme";
 import TextComponent from "./Text";
+import renderer from "react-test-renderer";
 
-describe("Text", () => {
+describe("Text:", () => {
   let props;
   let mountedText;
-  const lockScreen = () => {
+  const text = () => {
     if (!mountedText) {
       mountedText = mount(<TextComponent {...props} />);
     }
@@ -21,9 +22,21 @@ describe("Text", () => {
     };
     mountedText = undefined;
   });
-  it("is truthy", () => {
-    expect(true).toBeTruthy();
+
+  it("always render span", () => {
+    const spans = text().find("span");
+    expect(spans.length).toBeGreaterThan(0);
+  });
+});
+
+describe("Text Snapshot:", () => {
+  it("should renders correctly", () => {
+    expect(shallow(<TextComponent text="Hola!" />)).toMatchSnapshot();
   });
 
-  // All tests will go here
+  it("should add color to text", () => {
+    expect(
+      shallow(<TextComponent textColor="red" text="Hola!" />)
+    ).toMatchSnapshot();
+  });
 });

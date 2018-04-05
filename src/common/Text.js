@@ -1,9 +1,9 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 
-export default class TextComponent extends PureComponent {
+class TextComponent extends PureComponent {
   static propTypes = {
-    text: PropTypes.string,
+    text: PropTypes.string.isRequired,
     textClass: PropTypes.string,
     textColor: PropTypes.string,
     textRef: PropTypes.object
@@ -14,8 +14,8 @@ export default class TextComponent extends PureComponent {
     return (
       <span
         ref={textRef}
-        className={textClass}
-        style={{ color: textColor }}
+        className={textClass ? textClass : ""}
+        style={{ color: textColor ? textColor : "" }}
         {...props}
       >
         {text}
@@ -23,3 +23,6 @@ export default class TextComponent extends PureComponent {
     );
   }
 }
+
+TextComponent.defaultProps = { text: "" };
+export default TextComponent;
