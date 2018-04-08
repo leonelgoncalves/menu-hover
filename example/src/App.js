@@ -1,13 +1,18 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import { MoheComponent, AdsilaComponent, ExampleComponent } from "menu-hover";
+import {
+  MoheComponent,
+  AdsilaComponent,
+  SalalComponent,
+  ExampleComponent
+} from 'menu-hover';
 
 export default class App extends Component {
   constructor() {
     super();
     this.state = {
-      title: "Über uns",
-      description: "eine kurze Beschreibung"
+      title: 'Über uns',
+      description: 'eine kurze Beschreibung'
     };
   }
   render() {
@@ -22,6 +27,10 @@ export default class App extends Component {
           title={this.state.title}
           description={this.state.description}
           descriptionColor="purple"
+        />
+        <SalalComponent
+          title={this.state.title}
+          description={this.state.description}
         />
       </div>
     );
