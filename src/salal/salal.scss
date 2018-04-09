@@ -1,0 +1,76 @@
+@import '../styles';
+
+.demoSalal {
+  --color-text: #b5b5b5;
+  --color-background: #222325;
+  --color-link: #515152;
+  --color-link-hover: #fff;
+}
+
+.menuSalal {
+  height: 300px;
+  background-color: #222325;
+  .menu__item {
+    font-size: 1.25em;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    margin: 2em 0;
+  }
+
+  .menu__item:hover {
+    color: #515152;
+  }
+
+  .menu__item:first-child {
+    --menu-item-color: #f85f83;
+  }
+
+  .menu__itemName {
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    padding: 0.25em;
+    color: #fff;
+  }
+
+  .menu__itemName::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: #f85f83;
+    transform: scale3d(1, 0, 1);
+    transform-origin: 50% 100%;
+    transition: transform 0.3s;
+    transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  }
+
+  .menu__item:hover .menu__itemName::before,
+  .menu__item:focus .menu__itemName::before {
+    transform: scale3d(1, 1, 1);
+    transform-origin: 50% 0%;
+  }
+
+  .menu__itemLabel {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0.5em 0 0 1.5em;
+    white-space: pre;
+    color: #515152;
+  }
+
+  .menu__itemLabel span {
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width: 50em) {
+  .menuSalal .menu__itemLabel {
+    font-size: 0.6em;
+    margin-left: 0.25em;
+  }
+}

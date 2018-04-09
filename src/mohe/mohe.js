@@ -2,12 +2,12 @@
  * @class MoheComponent
  */
 
-import React, { PureComponent } from "react";
-import PropTypes from "prop-types";
-import styles from "./mohe.scss";
-import anime from "animejs";
-import charming from "charming";
-import TextComponent from "../common/Text";
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import styles from './mohe.scss';
+import anime from 'animejs';
+import charming from 'charming';
+import TextComponent from '../common/Text';
 
 export default class MoheComponent extends PureComponent {
   static propTypes = {
@@ -24,6 +24,9 @@ export default class MoheComponent extends PureComponent {
     this.dom.name = React.createRef();
     this.dom.description = React.createRef();
     this.dom.element = React.createRef();
+
+    this.mouseEnter = this.mouseEnter.bind(this);
+    this.mouseLeave = this.mouseLeave.bind(this);
   }
 
   componentDidMount() {
@@ -37,7 +40,7 @@ export default class MoheComponent extends PureComponent {
   init() {
     charming(this.dom.name.current);
     this.dom.nameLetters = Array.from(
-      this.dom.name.current.querySelectorAll("span")
+      this.dom.name.current.querySelectorAll('span')
     );
   }
 
@@ -80,7 +83,7 @@ export default class MoheComponent extends PureComponent {
     clearTimeout(this.mouseTimeout);
     if (!this.isActive) return;
     this.isActive = false;
-    this.dom.description.current.style.color = "transparent";
+    this.dom.description.current.style.color = 'transparent';
     anime.remove(this.dom.nameLetters);
     anime({
       targets: this.dom.nameLetters,
@@ -100,8 +103,8 @@ export default class MoheComponent extends PureComponent {
       <div className={styles.menuMohe}>
         <a
           className={styles.menu__item}
-          onMouseEnter={this.mouseEnter.bind(this)}
-          onMouseLeave={this.mouseLeave.bind(this)}
+          onMouseEnter={this.mouseEnter}
+          onMouseLeave={this.mouseLeave}
           ref={this.dom.element}
           href="#"
         >
