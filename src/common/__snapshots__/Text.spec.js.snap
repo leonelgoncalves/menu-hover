@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Text Snapshot: should add color to text 1`] = `
+exports[`Text Snapshots: should add color to text 1`] = `
 <span
   className=""
   style={
@@ -13,7 +13,7 @@ exports[`Text Snapshot: should add color to text 1`] = `
 </span>
 `;
 
-exports[`Text Snapshot: should renders correctly 1`] = `
+exports[`Text Snapshots: should renders correctly 1`] = `
 <span
   className=""
   style={

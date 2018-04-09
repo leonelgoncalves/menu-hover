@@ -1,0 +1,273 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MoheComponent: Snapshots: should renders correctly 1`] = `
+<div>
+  <a
+    href="#"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <TextComponent
+      text="Title"
+      textRef={
+        Object {
+          "current": <span
+            class=""
+            aria-label="Title"
+        >
+            <span
+                class="char1"
+                aria-hidden="true"
+            >
+                T
+            </span>
+            <span
+                class="char2"
+                aria-hidden="true"
+            >
+                i
+            </span>
+            <span
+                class="char3"
+                aria-hidden="true"
+            >
+                t
+            </span>
+            <span
+                class="char4"
+                aria-hidden="true"
+            >
+                l
+            </span>
+            <span
+                class="char5"
+                aria-hidden="true"
+            >
+                e
+            </span>
+        </span>,
+        }
+      }
+    >
+      <span
+        className=""
+        style={
+          Object {
+            "color": "",
+          }
+        }
+      >
+        Title
+      </span>
+    </TextComponent>
+    <TextComponent
+      text="description"
+      textRef={
+        Object {
+          "current": <span
+            class=""
+        >
+            description
+        </span>,
+        }
+      }
+    >
+      <span
+        className=""
+        style={
+          Object {
+            "color": "",
+          }
+        }
+      >
+        description
+      </span>
+    </TextComponent>
+  </a>
+</div>
+`;
+
+exports[`MoheComponent: Snapshots: should restore letters styles 1`] = `
+<div>
+  <a
+    href="#"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <TextComponent
+      text="Title"
+      textRef={
+        Object {
+          "current": <span
+            class=""
+            aria-label="Title"
+        >
+            <span
+                class="char1"
+                aria-hidden="true"
+                style="opacity: 1;"
+            >
+                T
+            </span>
+            <span
+                class="char2"
+                aria-hidden="true"
+                style="opacity: 1;"
+            >
+                i
+            </span>
+            <span
+                class="char3"
+                aria-hidden="true"
+                style="opacity: 1;"
+            >
+                t
+            </span>
+            <span
+                class="char4"
+                aria-hidden="true"
+                style="opacity: 1;"
+            >
+                l
+            </span>
+            <span
+                class="char5"
+                aria-hidden="true"
+                style="opacity: 1;"
+            >
+                e
+            </span>
+        </span>,
+        }
+      }
+    >
+      <span
+        className=""
+        style={
+          Object {
+            "color": "",
+          }
+        }
+      >
+        Title
+      </span>
+    </TextComponent>
+    <TextComponent
+      text="description"
+      textRef={
+        Object {
+          "current": <span
+            class=""
+        >
+            description
+        </span>,
+        }
+      }
+    >
+      <span
+        className=""
+        style={
+          Object {
+            "color": "",
+          }
+        }
+      >
+        description
+      </span>
+    </TextComponent>
+  </a>
+</div>
+`;
+
+exports[`MoheComponent: Snapshots: should update the letters styles 1`] = `
+<div>
+  <a
+    href="#"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <TextComponent
+      text="Title"
+      textRef={
+        Object {
+          "current": <span
+            class=""
+            aria-label="Title"
+        >
+            <span
+                class="char1"
+                aria-hidden="true"
+                style="opacity: 0.3;"
+            >
+                T
+            </span>
+            <span
+                class="char2"
+                aria-hidden="true"
+                style="opacity: 0.3;"
+            >
+                i
+            </span>
+            <span
+                class="char3"
+                aria-hidden="true"
+                style="opacity: 0.3;"
+            >
+                t
+            </span>
+            <span
+                class="char4"
+                aria-hidden="true"
+                style="opacity: 0.3;"
+            >
+                l
+            </span>
+            <span
+                class="char5"
+                aria-hidden="true"
+                style="opacity: 0.3;"
+            >
+                e
+            </span>
+        </span>,
+        }
+      }
+    >
+      <span
+        className=""
+        style={
+          Object {
+            "color": "",
+          }
+        }
+      >
+        Title
+      </span>
+    </TextComponent>
+    <TextComponent
+      text="description"
+      textRef={
+        Object {
+          "current": <span
+            class=""
+            style="color: purple;"
+        >
+            description
+        </span>,
+        }
+      }
+    >
+      <span
+        className=""
+        style={
+          Object {
+            "color": "",
+          }
+        }
+      >
+        description
+      </span>
+    </TextComponent>
+  </a>
+</div>
+`;

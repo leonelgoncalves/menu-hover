@@ -43,6 +43,7 @@ export default class MoheComponent extends PureComponent {
 
   mouseEnter() {
     this.mouseTimeout = setTimeout(() => {
+      console.log("----------------");
       this.isActive = true;
       this.dom.description.current.style.color = this.props.descriptionColor;
       anime.remove(this.dom.nameLetters);
