@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "animejs": "^2.2.0",
+    "aphrodite": "^2.1.1",
     "charming": "^2.2.3"
   },
   "peerDependencies": {
