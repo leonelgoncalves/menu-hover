@@ -2,19 +2,23 @@
  * @class MoheComponent
  */
 
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
-import styles from './mohe.scss';
-import anime from 'animejs';
-import charming from 'charming';
-import TextComponent from '../common/Text';
+import React, { PureComponent } from "react";
+import PropTypes from "prop-types";
+import styles from "./mohe.scss";
+import anime from "animejs";
+import charming from "charming";
+import TextComponent from "../common/Text";
 
 export default class MoheComponent extends PureComponent {
   static propTypes = {
-    title: PropTypes.string,
-    description: PropTypes.string,
-    titleColor: PropTypes.string,
-    descriptionColor: PropTypes.string
+    title: PropTypes.shape({
+      text: PropTypes.string.isRequired,
+      color: PropTypes.string
+    }),
+    description: PropTypes.shape({
+      text: PropTypes.string.isRequired,
+      color: PropTypes.string
+    })
   };
   active = false;
   dom = {};
@@ -40,13 +44,12 @@ export default class MoheComponent extends PureComponent {
   init() {
     charming(this.dom.name.current);
     this.dom.nameLetters = Array.from(
-      this.dom.name.current.querySelectorAll('span')
+      this.dom.name.current.querySelectorAll("span")
     );
   }
 
   mouseEnter() {
     this.mouseTimeout = setTimeout(() => {
-      console.log("----------------");
       this.isActive = true;
       this.dom.description.current.style.color = this.props.descriptionColor;
       anime.remove(this.dom.nameLetters);
@@ -83,7 +86,7 @@ export default class MoheComponent extends PureComponent {
     clearTimeout(this.mouseTimeout);
     if (!this.isActive) return;
     this.isActive = false;
-    this.dom.description.current.style.color = 'transparent';
+    this.dom.description.current.style.color = "transparent";
     anime.remove(this.dom.nameLetters);
     anime({
       targets: this.dom.nameLetters,
@@ -98,7 +101,7 @@ export default class MoheComponent extends PureComponent {
   }
 
   render() {
-    const { title, description, titleColor } = this.props;
+    const { title, description } = this.props;
     return (
       <div className={styles.menuMohe}>
         <a
@@ -109,14 +112,14 @@ export default class MoheComponent extends PureComponent {
           href="#"
         >
           <TextComponent
-            text={title}
+            text={title.text}
             textRef={this.dom.name}
             textClass={styles.menu__itemName}
-            textColor={titleColor}
+            textColor={title.color}
           />
 
           <TextComponent
-            text={description}
+            text={description.text}
             textRef={this.dom.description}
             textClass={styles.menu__itemLabel}
           />

@@ -13,13 +13,13 @@ export default class App extends Component {
     this.state = {
       title: {
         text: "Über uns",
-        color: "#ffffe0",
+        color: "#90ee90",
         hoverColor: "#6265fe"
       },
       description: {
         text: "eine kurze Beschreibung",
-        color: "#90ee90",
-        hoverColor: "#6265fe"
+        color: "#6265fe",
+        hoverColor: "#90ee90"
       }
     };
   }
@@ -32,9 +32,8 @@ export default class App extends Component {
           description={this.state.description.text}
         />
         <MoheComponent
-          title={this.state.title.text}
-          description={this.state.description.text}
-          descriptionColor="purple"
+          title={this.state.title}
+          description={this.state.description}
         />
         <SalalComponent
           title={this.state.title}

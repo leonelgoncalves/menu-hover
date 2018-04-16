@@ -1,4 +1,6 @@
 import React, { PureComponent } from "react";
+import { StyleSheet, css } from "aphrodite";
+
 import PropTypes from "prop-types";
 import TextComponent from "../common/Text";
 import styles from "./salal.scss";
@@ -101,7 +103,7 @@ export default class SalalComponent extends PureComponent {
 
   render() {
     const { title, description, backgroundColor } = this.props;
-
+    debugger;
     return (
       <div style={{ background: backgroundColor ? backgroundColor : "white" }}>
         <a
@@ -127,3 +129,44 @@ export default class SalalComponent extends PureComponent {
     );
   }
 }
+
+// const aphroStyles = StyleSheet.create({
+//   menu__itemName: {
+//     fontFamily: '"Lora", serif',
+//     fontWeight: "700",
+//     padding: "0.25em",
+//     zIndex: "1",
+//     lineHeight: "1",
+//     position: "relative",
+//     display: "block",
+//     margin: "1em 0",
+//     outline: "none",
+//     ":before": {
+//       content: "''",
+//       position: "absolute",
+//       zIndex: "-1",
+//       bottom: "0",
+//       left: "0",
+//       width: "100%",
+//       height: "50%",
+//       background: "#f85f83",
+//       transform: "scale3d(1, 0, 1)",
+//       transformOrigin: "50% 100%",
+//       transition: "transform 0.3s",
+//       transitionTimingFunction: "cubic-bezier(0.7, 0, 0.3, 1)"
+//     },
+//     ":hover": {
+//       ":before": {
+//         transform: "scale3d(1, 1, 1)",
+//         transformOrigin: "50% 0%"
+//       }
+//     }
+//   },
+//   menu__item: {
+//     fontSize: "1.25em",
+//     display: "flex",
+//     flexWrap: "wrap",
+//     alignItems: "flex-end",
+//     margin: "2em 0"
+//   }
+// });
